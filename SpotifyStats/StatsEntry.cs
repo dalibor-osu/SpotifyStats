@@ -16,7 +16,7 @@ public class StatsEntry
     public string Username { get; set; } = Constants.UNKNOWN;
     
     [JsonProperty("platform")]
-    [Column(PLATFORM)]
+    //[Column(PLATFORM)]
     public string? Platform { get; set; }
         
     [JsonProperty("ms_played")]
@@ -27,15 +27,15 @@ public class StatsEntry
     public float MinutesPlayed => MillisecondsPlayed / 1000.0f / 60.0f;
         
     [JsonProperty("conn_country")]
-    [Column(CONNECTION_COUNTRY)]
+    //[Column(CONNECTION_COUNTRY)]
     public string ConnectionCountry { get; set; } = string.Empty;
         
     [JsonProperty("ip_addr_decrypted")]
-    [Column(CONNECTION_IP_ADDRESS)]
+    //[Column(CONNECTION_IP_ADDRESS)]
     public string ConnectionIpAddress { get; set; } = string.Empty;
         
     [JsonProperty("user_agent_decrypted")]
-    [Column(USER_AGENT_DECRYPTED)]
+    //[Column(USER_AGENT_DECRYPTED)]
     public string UserAgentDecrypted { get; set; } = string.Empty;
         
     [JsonProperty("master_metadata_track_name")]
@@ -51,7 +51,7 @@ public class StatsEntry
     public string? AlbumName { get; set; }
         
     [JsonProperty("spotify_track_uri")]
-    [Column(SPOTIFY_TRACK_URI)]
+    //[Column(SPOTIFY_TRACK_URI)]
     public string? SpotifyTrackUri { get; set; }
         
     [JsonProperty("episode_name")]
@@ -63,15 +63,15 @@ public class StatsEntry
     public string? EpisodeShowName { get; set; }
         
     [JsonProperty("spotify_episode_uri")]
-    [Column(SPOTIFY_EPISODE_URI)]
+    //[Column(SPOTIFY_EPISODE_URI)]
     public string? SpotifyEpisodeUri { get; set; }
         
     [JsonProperty("reason_start")]
-    [Column(REASON_START)]
+    //[Column(REASON_START)]
     public string ReasonStart { get; set; } = string.Empty;
         
     [JsonProperty("reason_end")]
-    [Column(REASON_END)]
+    //[Column(REASON_END)]
     public string ReasonEnd { get; set; } = string.Empty;
         
     [JsonProperty("shuffle")]
@@ -87,10 +87,10 @@ public class StatsEntry
     public bool? Offline { get; set; }
     
     [JsonProperty("offline_timestamp")]
-    [Column(OFFLINE_TIME_STAMP)]
+    //[Column(OFFLINE_TIME_STAMP)]
     public DateTimeOffset? OfflineTimeStamp { get; set; }
         
     [JsonProperty("incognito_mode")]
-    [Column(INCOGNITO_MODE)]
+    //[Column(INCOGNITO_MODE)]
     public bool IncognitoMode { get; set; }
 }
