@@ -20,8 +20,11 @@ public class StatsEntry
     public string? Platform { get; set; }
         
     [JsonProperty("ms_played")]
-    [Column(MILLISECONDS_PLAYED)]
     public int MillisecondsPlayed { get; set; }
+
+    [Column(MINUTES_PLAYED)]
+    [JsonIgnore]
+    public float MinutesPlayed => MillisecondsPlayed / 1000.0f / 60.0f;
         
     [JsonProperty("conn_country")]
     [Column(CONNECTION_COUNTRY)]

@@ -10,7 +10,7 @@ public static class Constants
         public const string TIME_STAMP = "timestamp";
         public const string USERNAME = "username";
         public const string PLATFORM = "platform";
-        public const string MILLISECONDS_PLAYED = "milliseconds_played";
+        public const string MINUTES_PLAYED = "minutes_played";
         public const string CONNECTION_COUNTRY = "connection_country";
         public const string CONNECTION_IP_ADDRESS = "connection_address";
         public const string USER_AGENT_DECRYPTED = "user_agent";

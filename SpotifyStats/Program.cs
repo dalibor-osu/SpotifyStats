@@ -7,6 +7,10 @@ using SpotifyStats;
 using File = System.IO.File;
 using static PrettyLogSharp.PrettyLogger;
 
+string username;
+string path;
+bool customName;
+
 if (!File.Exists("./config.json"))
 {
     Log("Config file \"config.json\" not found.", LogLevel.Error);
@@ -20,12 +24,21 @@ if (settings == null)
     return;
 }
 
-Log("Who are you adding (leave empty to keep spotify username)?");
-string username = Console.ReadLine() ?? string.Empty;
-bool customName = username != string.Empty;
+if (args.Length < 2)
+{
+    Log("Who are you adding (leave empty to keep spotify username)?");
+    username = Console.ReadLine() ?? string.Empty;
+    customName = username != string.Empty;
 
-Log("Path to files directory:");
-string path = Console.ReadLine() ?? string.Empty;
+    Log("Path to files directory:");
+    path = Console.ReadLine() ?? string.Empty;
+}
+else
+{
+    username = args[0];
+    path = args[1];
+    customName = true;
+}
 
 string[] files = Directory.GetFiles(path, "Streaming_History_Audio_*.json");
 
